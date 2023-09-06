@@ -100,7 +100,7 @@ Route::get('welcome/{lang?}', function ($lang = null) {
     // Daha sonra Middleware olarak kullanılacak
     if ($lang == null) {
         $lang = 'en';
-        foreach(AcceptLanguage::get() as $language) {
+        foreach (AcceptLanguage::get() as $language) {
             if (in_array($language['language'], array_keys($translations))) {
                 $lang = $language['language'];
                 break;
@@ -125,7 +125,6 @@ Route::get('welcome/{lang?}', function ($lang = null) {
         'translations' => $translations[$lang],
         'languages' => array_keys($translations),
     ]);
-
 })->name('landing');
 
 Route::get('set-color/{color}', function ($color) {
@@ -155,7 +154,7 @@ Route::resource('posts', PostController::class);
 
 Route::resource('categories', CategoryController::class);
 
-Route::get('app', function() {
+Route::get('app', function () {
     dd(app());
 });
 
@@ -171,4 +170,4 @@ Route::get('app', function() {
 // Create => create, store
 // Read => index, show
 // Update => edit, update
-// Delete => destroy
+// Delete => destroyaa
