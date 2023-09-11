@@ -20,11 +20,22 @@ class PostController extends Controller
         }
 
         $posts = $posts->get();
-        
+
+        $categories = Category::query();
+        $order = $request->get('order');
+
+        if ($order === "desc") {
+            $categories->orderByDesc('name');
+        } else {
+            $categories->orderBy('name');
+        }
+
+        $categories = $categories->get();
+
         // compact('var1', 'var2') ---> ['var1' => $var1, 'var2' => $var2]
         // farklı avantajları/dezavantajları var
 
-        return view('post.index', compact('posts'));
+        return view('post.index', compact('posts'), compact('categories', 'order'));
     }
 
     /**
@@ -46,7 +57,7 @@ class PostController extends Controller
             'title' => 'required|string|max:250',
             'content' => 'nullable|string',
         ]);
-        
+
         $post = new Post;
 
         $post->category()->associate($request->input('category_id'));

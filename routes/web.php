@@ -157,6 +157,13 @@ Route::resource('categories', CategoryController::class);
 Route::get('app', function () {
     dd(app());
 });
+Route::get('about', function () {
+    return view('about');
+});
+Route::get('contact', function () {
+    return view('contact');
+});
+
 
 /*Route::get(
     'carpenter',
