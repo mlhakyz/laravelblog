@@ -7,6 +7,7 @@
             <div class="owl-banner owl-carousel">
                 @forelse ($posts as $post)
                     <div class="item">
+
                         <img src="{{ URL::asset('images/banner-item-01.jpg') }}" alt="">
                         <div class="item-content">
                             <div class="main-content">

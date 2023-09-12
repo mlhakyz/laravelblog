@@ -14,11 +14,9 @@ class PostController extends Controller
     public function index(Request $request)
     {
         $posts = Post::query();
-
         if ($request->has('category_id')) {
             $posts->where('category_id', $request->get('category_id'));
         }
-
         $posts = $posts->get();
 
         $categories = Category::query();
@@ -35,7 +33,7 @@ class PostController extends Controller
         // compact('var1', 'var2') ---> ['var1' => $var1, 'var2' => $var2]
         // farklı avantajları/dezavantajları var
 
-        return view('post.index', compact('posts'), compact('categories', 'order'));
+        return view('post.index', compact('posts', 'categories', 'order'));
     }
 
     /**
@@ -74,7 +72,9 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return view('post.show', compact('post'));
+        $posts = Post::query();
+        $posts = $posts->get();
+        return view('post.show', compact('post', 'posts'),);
     }
 
     /**

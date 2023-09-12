@@ -163,6 +163,9 @@ Route::get('about', function () {
 Route::get('contact', function () {
     return view('contact');
 });
+Route::get('admin/login', function () {
+    return view('admin.login');
+});
 
 
 /*Route::get(
