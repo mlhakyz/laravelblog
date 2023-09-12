@@ -77,7 +77,7 @@
                                     <div class="content">
                                         <ul>
                                             <li>
-                                                <h5>090-484-8080</h5>
+                                                <h5>0xxx-xxx-xx-xx</h5>
                                                 <span>PHONE NUMBER</span>
                                             </li>
                                             <li>
@@ -85,8 +85,8 @@
                                                 <span>EMAIL ADDRESS</span>
                                             </li>
                                             <li>
-                                                <h5>123 Aenean id posuere dui,
-                                                    <br>Praesent laoreet 10660
+                                                <h5>xx adress,
+                                                    <br>xxx adress
                                                 </h5>
                                                 <span>STREET ADDRESS</span>
                                             </li>
@@ -101,8 +101,9 @@
                 <div class="col-lg-12">
                     <div id="map">
                         <iframe
-                            src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                            width="100%" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195884.7199739243!2d32.76276475!3d39.903376550000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d347d520732db1%3A0xbdc57b0c0842b8d!2sAnkara!5e0!3m2!1str!2str!4v1694503637104!5m2!1str!2str"
+                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
 

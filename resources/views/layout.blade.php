@@ -35,7 +35,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('posts.index') }}">
-                    <h2>Akyüz Blog<em>.</em></h2>
+                    <h2>Akyuz Blog<em>.</em></h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                     aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,16 +75,16 @@
                     <ul class="social-icons">
                         <li><a href="#">Facebook</a></li>
                         <li><a href="#">Twitter</a></li>
-                        <li><a href="#">Behance</a></li>
+                        <li><a href="#">İnstagram</a></li>
                         <li><a href="#">Linkedin</a></li>
-                        <li><a href="#">Dribbble</a></li>
+                        <li><a href="#">Discord</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-12">
                     <div class="copyright-text">
-                        <p>Copyright 2020 Stand Blog Co.
+                        <p>Akyuz 2023
 
-                            | Design: <a rel="nofollow" href="https://templatemo.com" target="_parent">TemplateMo</a>
+                            | Design: <a rel="nofollow" href="https://github.com/mlhakyz" target="_parent">Akyuz</a>
                         </p>
                     </div>
                 </div>
