@@ -2,6 +2,7 @@
 
 use App\Contracts\Hammer;
 use App\Contracts\Nail;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
@@ -166,6 +167,10 @@ Route::get('contact', function () {
 Route::get('admin/login', function () {
     return view('admin.login');
 });
+Route::get('admin/index', function () {
+    return view('admin.index');
+});
+Route::post('giris-sonuc', [AdminController::class, 'login'])->name('login');
 
 
 /*Route::get(
