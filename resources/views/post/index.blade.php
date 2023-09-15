@@ -12,7 +12,7 @@
                         <div class="item-content">
                             <div class="main-content">
                                 <div class="meta-category">
-                                    <span>Fashion</span>
+                                    <span> {{ $post->category->name }}</span>
                                 </div>
                                 <a href="{{ route('posts.show', $post) }}">
                                     <h4>{{ $post->title }}</h4>
@@ -42,6 +42,9 @@
                 <div class="col-lg-8">
                     <div class="all-blog-posts">
                         <div class="row">
+                            <p>
+                                <a href="{{ route('posts.create') }}">Yeni Yazı Ekle</a>
+                            </p>
                             @forelse ($posts as $post)
                                 <div class="col-lg-12">
                                     <div class="blog-post">
@@ -49,7 +52,7 @@
                                             <img src="{{ URL::asset('images/blog-post-01.jpg') }}" alt="">
                                         </div>
                                         <div class="down-content">
-                                            <span>Lifestyle</span>
+                                            <span>{{ $post->category->name }}</span>
                                             <a href="{{ route('posts.show', $post) }}">
                                                 <h4>{{ $post->title }}</h4>
                                             </a>

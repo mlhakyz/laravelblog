@@ -13,10 +13,10 @@
 </p>
 <p>
     <a href="{{ route('posts.edit', $post) }}">Düzenle</a>
-    <form method="POST" action="{{ route('posts.destroy', $post) }}">
-        @csrf
-        @method('DELETE')
-        <button type="submit">Sil</button>
-    </form>
-    <a href="{{ route('posts.index') }}">Geri Dön</a>
+<form method="POST" action="{{ route('posts.destroy', $post) }}">
+    @csrf
+    @method('DELETE')
+    <button type="submit">Sil</button>
+</form>
+<a href="{{ route('posts.index') }}">Geri Dön</a>
 </p>

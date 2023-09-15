@@ -112,10 +112,58 @@
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
-                        </div><!-- /.col -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title"></h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Post ID</th>
+                                                <th>Post Title</th>
+                                                <th>Post Content</th>
+                                                <th>Post Categories</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @forelse ($posts as $postevery)
+                                                <tr>
+                                                    <td>{{ $postevery->id }}</td>
+                                                    <td>{{ $postevery->title }}</td>
+                                                    <td>{{ $postevery->content }}</td>
+                                                    <td> {{ $postevery->category->name }} </td>
+                                                    <td><a href="{{ route('posts.edit', $postevery) }}" type="button"
+                                                            class="btn btn-block btn-warning">Edit</a>
+                                                    </td>
+                                                    <td>
+                                                        <form method="POST"
+                                                            action="{{ route('posts.destroy', $postevery) }}">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button class="btn btn-block btn-danger"
+                                                                type="submit">Sil</button>
+                                                        </form>
+                                                    </td>
 
+                                                </tr>
+                                            @empty
+                                                <li>
+                                                    Herhangi bir yazı bulunamadı
+                                                </li>
+                                            @endforelse
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
@@ -178,7 +226,37 @@
     <script src="{{ URL::asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ URL::asset('js/adminlte.js') }}"></script>
-
+    <script src="{{ URL::asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ URL::asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ URL::asset('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ URL::asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+    <script src="{{ URL::asset('plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ URL::asset('plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ URL::asset('plugins/jszip/jszip.min.js') }}"></script>
+    <script src="{{ URL::asset('plugins/pdfmake/pdfmake.min.js') }}"></script>
+    <script src="{{ URL::asset('plugins/pdfmake/vfs_fonts.js') }}"></script>
+    <script src="{{ URL::asset('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ URL::asset('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+    <script src="{{ URL::asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+    <script>
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
 </body>
 
 </html>

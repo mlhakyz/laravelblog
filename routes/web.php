@@ -170,7 +170,8 @@ Route::get('admin/login', function () {
 Route::get('admin/index', function () {
     return view('admin.index');
 });
-Route::post('giris-sonuc', [AdminController::class, 'login'])->name('login');
+
+Route::match(['get', 'post'], 'admin/index', [AdminController::class, 'login'])->name('login');
 
 
 /*Route::get(

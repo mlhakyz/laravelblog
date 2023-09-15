@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index(Request $request, Post $post)
     {
         $posts = Post::query();
         if ($request->has('category_id')) {
@@ -33,7 +34,7 @@ class PostController extends Controller
         // compact('var1', 'var2') ---> ['var1' => $var1, 'var2' => $var2]
         // farklı avantajları/dezavantajları var
 
-        return view('post.index', compact('posts', 'categories', 'order'));
+        return view('post.index', compact('post', 'posts', 'categories', 'order'));
     }
 
     /**
@@ -74,7 +75,7 @@ class PostController extends Controller
     {
         $posts = Post::query();
         $posts = $posts->get();
-        return view('post.show', compact('post', 'posts'),);
+        return view('post.show', compact('post', 'posts'));
     }
 
     /**
@@ -114,6 +115,6 @@ class PostController extends Controller
     {
         $post->delete();
 
-        return redirect()->route('posts.index');
+        return redirect()->back()->with('success', 'Delete it');
     }
 }
