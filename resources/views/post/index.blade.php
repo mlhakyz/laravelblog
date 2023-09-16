@@ -4,6 +4,7 @@
     <!-- Banner Starts Here -->
     <div class="main-banner header-text">
         <div class="container-fluid">
+
             <div class="owl-banner owl-carousel">
                 @forelse ($posts as $post)
                     <div class="item">
@@ -42,6 +43,9 @@
                 <div class="col-lg-8">
                     <div class="all-blog-posts">
                         <div class="row">
+                            <p>
+                                <a href="{{ route('posts.create') }}">Yeni Yazı Ekle</a>
+                            </p>
                             @forelse ($posts as $post)
                                 <div class="col-lg-12">
                                     <div class="blog-post">
@@ -49,7 +53,7 @@
                                             <img src="{{ URL::asset('images/blog-post-01.jpg') }}" alt="">
                                         </div>
                                         <div class="down-content">
-                                            <span>{{ $post->category->name }}</span>
+                                            <span>Lifestyle</span>
                                             <a href="{{ route('posts.show', $post) }}">
                                                 <h4>{{ $post->title }}</h4>
                                             </a>

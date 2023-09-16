@@ -166,12 +166,10 @@ Route::get('contact', function () {
 });
 Route::get('admin/login', function () {
     return view('admin.login');
-});
-Route::get('admin/index', function () {
-    return view('admin.index');
-});
-
-Route::match(['get', 'post'], 'admin/index', [AdminController::class, 'login'])->name('login');
+})->name('adminlogin');
+Route::get('admin/logout', [AdminController::class, 'getLogout'])->name('logout');
+Route::get('admin/index', [AdminController::class, 'index'])->name('admin');
+Route::post('admin/index', [AdminController::class, 'login'])->name('login');
 
 
 /*Route::get(
