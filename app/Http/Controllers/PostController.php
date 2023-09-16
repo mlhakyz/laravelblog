@@ -115,6 +115,6 @@ class PostController extends Controller
     {
         $post->delete();
 
-        return redirect()->back()->with('success', 'Delete it');
+        return view('admin.index', compact('post'));
     }
 }
