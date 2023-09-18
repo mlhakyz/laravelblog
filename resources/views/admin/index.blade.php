@@ -18,7 +18,7 @@
 
                             </div>
                             <!-- /.card-header -->
-                            <div class="card-body">
+                            <div class="card-body table-responsive-sm">
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
@@ -26,6 +26,7 @@
                                             <th>Post Title</th>
                                             <th>Post Content</th>
                                             <th>Post Categories</th>
+                                            <th>Show</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
                                         </tr>
@@ -37,17 +38,20 @@
                                                 <td>{{ $postevery->title }}</td>
                                                 <td>{{ $postevery->content }}</td>
                                                 <td> {{ $postevery->category->name }} </td>
+                                                <td><a href="{{ route('posts.show', $postevery) }}" type="button"
+                                                        class="btn btn-block btn-primary">Show</a>
+                                                </td>
                                                 <td><a href="{{ route('posts.edit', $postevery) }}" type="button"
-                                                        class="btn btn-block btn-warning">Edit</a>
+                                                        class="btn btn-block btn-secondary">Edit</a>
                                                 </td>
                                                 <td>
                                                     <form method="POST" action="{{ route('posts.destroy', $postevery) }}">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button class="btn btn-block btn-danger" type="submit">Sil</button>
+                                                        <button class="btn btn-block btn-danger"
+                                                            type="submit">Delete</button>
                                                     </form>
                                                 </td>
-
                                             </tr>
                                         @empty
                                             <li>
