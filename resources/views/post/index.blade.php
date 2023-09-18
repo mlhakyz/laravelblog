@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('post.layout')
 @section('body')
     <!-- Page Content -->
     <!-- Banner Starts Here -->

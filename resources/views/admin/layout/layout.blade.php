@@ -87,13 +87,13 @@
 
 
                             <li class="nav-item">
-                                <a href="{{ route('admin.index') }}" class="nav-link active">
+                                <a href="{{ route('admin') }}" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Manage Post</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('admin.category') }}" class="nav-link">
+                                <a href="{{ route('category') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Manage Category</p>
                                 </a>

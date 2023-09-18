@@ -169,6 +169,7 @@ Route::get('admin/login', function () {
 })->name('adminlogin');
 Route::get('admin/logout', [AdminController::class, 'getLogout'])->name('logout');
 Route::get('admin/index', [AdminController::class, 'index'])->name('admin');
+Route::get('admin/category', [AdminController::class, 'category'])->name('category');
 Route::post('admin/index', [AdminController::class, 'login'])->name('login');
 
 
