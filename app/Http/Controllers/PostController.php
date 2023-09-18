@@ -34,7 +34,7 @@ class PostController extends Controller
         // compact('var1', 'var2') ---> ['var1' => $var1, 'var2' => $var2]
         // farklı avantajları/dezavantajları var
 
-        return view('post.index', compact('post', 'posts', 'categories', 'order'));
+        return view('layout.index', compact('post', 'posts', 'categories', 'order'));
     }
 
     /**
@@ -65,7 +65,7 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect()->route('posts.show', $post);
+        return redirect()->route('admin', $post);
     }
 
     /**
@@ -105,7 +105,7 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect()->route('posts.show', $post);
+        return redirect()->route('admin', $post);
     }
 
     /**

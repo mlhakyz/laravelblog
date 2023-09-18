@@ -1,4 +1,4 @@
-@extends('post.layout')
+@extends('layout.layout')
 @section('body')
     <!-- Page Content -->
     <!-- Banner Starts Here -->
@@ -43,9 +43,7 @@
                 <div class="col-lg-8">
                     <div class="all-blog-posts">
                         <div class="row">
-                            <p>
-                                <a href="{{ route('posts.create') }}">Yeni Yazı Ekle</a>
-                            </p>
+
                             @forelse ($posts as $post)
                                 <div class="col-lg-12">
                                     <div class="blog-post">

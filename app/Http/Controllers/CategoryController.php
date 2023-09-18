@@ -47,7 +47,7 @@ class CategoryController extends Controller
         $category->name = $request->input('name');
         $category->save();
 
-        return redirect()->route('categories.show', $category);
+        return redirect()->route('category', $category);
     }
 
     /**
@@ -56,7 +56,7 @@ class CategoryController extends Controller
     public function show(Category $category)
     {
         $posts = $category->posts()->latest()->take(3)->get();
-        
+
         return view('category.show', compact('category', 'posts'));
     }
 
@@ -80,7 +80,7 @@ class CategoryController extends Controller
         $category->name = $request->input('name');
         $category->save();
 
-        return redirect()->route('categories.show', $category);
+        return redirect()->route('category', $category);
     }
 
     /**

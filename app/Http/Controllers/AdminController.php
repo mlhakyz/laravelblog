@@ -62,4 +62,19 @@ class AdminController extends Controller
         session()->forget('username');
         return redirect()->route('adminlogin');
     }
+    public function category(Request $request, Post $post)
+    {
+        $categories = Category::query();
+        $order = $request->get('order');
+
+        if ($order === "desc") {
+            $categories->orderByDesc('name');
+        } else {
+            $categories->orderBy('name');
+        }
+
+        $categories = $categories->get();
+
+        return view('admin.category', compact('categories', 'order'));
+    }
 }
