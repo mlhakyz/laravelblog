@@ -20,6 +20,10 @@
         @endforeach
     </select>
     <br>
+    <label for="inpEditor">Editor</label>
+    <br>
+    <input type="text" value="{{ $errors->any() ? old('editor') : $post->editor }}" name="editor" id="inpEditor" />
+    <br>
     <label for="inpTitle">Başlık</label>
     <br>
     <input type="text" value="{{ $errors->any() ? old('title') : $post->title }}" name="title" id="inpTitle" />
@@ -29,7 +33,7 @@
     <textarea name="content" id="inpContent">{{ $errors->any() ? old('content') : $post->content }}</textarea>
     <br>
     <br>
-    <input type="file" name="image" id="inpTitle" />
+    <input type="file" name="image" id="inpFile" />
     <br>
     <br>
     <button type="submit">Güncelle</button>

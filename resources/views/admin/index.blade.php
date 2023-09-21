@@ -24,6 +24,7 @@
                                         <tr>
                                             <th>Post ID</th>
                                             <th>Post Categories</th>
+                                            <th>Post Editor</th>
                                             <th>Post Title</th>
                                             <th>Post Content</th>
                                             <th>Post Image</th>
@@ -37,6 +38,7 @@
                                             <tr>
                                                 <td>{{ $postevery->id }}</td>
                                                 <td> {{ $postevery->category->name }} </td>
+                                                <td>{{ $postevery->editor }}</td>
                                                 <td>{{ $postevery->title }}</td>
                                                 <td>{{ $postevery->content }}</td>
                                                 <td>{{ $postevery->image_url }}</td>

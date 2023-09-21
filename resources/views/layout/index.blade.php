@@ -19,8 +19,8 @@
                                     <h4>{{ $post->title }}</h4>
                                 </a>
                                 <ul class="post-info">
-                                    <li><a href="#">Admin</a></li>
-                                    <li><a href="#">May 12, 2020</a></li>
+                                    <li><a href="#">{{ $post->editor }}</a></li>
+                                    <li><a href="#">{{ date('d-m-Y', strtotime($post->created_at)) }}</a></li>
                                     <li><a href="#">12 Comments</a></li>
                                 </ul>
                             </div>
@@ -56,8 +56,9 @@
                                                 <h4>{{ $post->title }}</h4>
                                             </a>
                                             <ul class="post-info">
-                                                <li><a href="#">Admin</a></li>
-                                                <li><a href="#">May 31, 2020</a></li>
+                                                <li><a href="#">{{ $post->editor }}</a></li>
+                                                <li><a href="#">{{ date('d-m-Y', strtotime($post->created_at)) }}</a>
+                                                </li>
                                                 <li><a href="#">12 Comments</a></li>
                                             </ul>
                                             <p>{{ $post->content }}</p>
@@ -117,7 +118,7 @@
                                             @forelse ($posts as $post)
                                                 <li><a href="{{ route('posts.show', $post) }}">
                                                         <h5>{{ $post->title }}</h5>
-                                                        <span>May 31, 2020</span>
+                                                        <span>{{ date('d-m-Y', strtotime($post->created_at)) }}</span>
                                                     </a></li>
                                             @empty
                                                 <li>
