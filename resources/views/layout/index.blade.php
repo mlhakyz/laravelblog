@@ -9,7 +9,7 @@
                 @forelse ($posts as $post)
                     <div class="item">
 
-                        <img src="{{ URL::asset('images/banner-item-01.jpg') }}" alt="">
+                        <img src="{{ 'images/' . $post->image_url }}" alt="">
                         <div class="item-content">
                             <div class="main-content">
                                 <div class="meta-category">
@@ -48,7 +48,7 @@
                                 <div class="col-lg-12">
                                     <div class="blog-post">
                                         <div class="blog-thumb">
-                                            <img src="{{ URL::asset('images/blog-post-01.jpg') }}" alt="">
+                                            <img src="{{ 'images/' . $post->image_url }}" alt="">
                                         </div>
                                         <div class="down-content">
                                             <span>Lifestyle</span>

@@ -97,11 +97,17 @@ class PostController extends Controller
             'category_id' => 'required|exists:categories,id',
             'title' => 'required|string|max:250',
             'content' => 'nullable|string',
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
+        $image = $request->file('image');
+        $destinationPath = 'images/';
+        $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+        $image->move($destinationPath, $profileImage);
 
         $post->category()->associate($request->input('category_id'));
         $post->title = $request->input('title');
         $post->content = $request->input('content');
+        $post->image_url =  $profileImage;
 
         $post->save();
 

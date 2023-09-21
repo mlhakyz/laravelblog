@@ -23,9 +23,10 @@
                                     <thead>
                                         <tr>
                                             <th>Post ID</th>
+                                            <th>Post Categories</th>
                                             <th>Post Title</th>
                                             <th>Post Content</th>
-                                            <th>Post Categories</th>
+                                            <th>Post Image</th>
                                             <th>Show</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
@@ -35,9 +36,10 @@
                                         @forelse ($posts as $postevery)
                                             <tr>
                                                 <td>{{ $postevery->id }}</td>
+                                                <td> {{ $postevery->category->name }} </td>
                                                 <td>{{ $postevery->title }}</td>
                                                 <td>{{ $postevery->content }}</td>
-                                                <td> {{ $postevery->category->name }} </td>
+                                                <td>{{ $postevery->image_url }}</td>
                                                 <td><a href="{{ route('posts.show', $postevery) }}" type="button"
                                                         class="btn btn-block btn-primary">Show</a>
                                                 </td>
